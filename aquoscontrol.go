@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
 	"strings"
@@ -36,9 +37,16 @@ type ControlHandler struct {
 }
 
 var conf Config
+var configPath string
+
+func init() {
+	flag.StringVar(&configPath, "config", "config.toml", "-config=/path/to/config.toml")
+}
 
 func main() {
-	_, err := toml.DecodeFile("config.toml", &conf)
+	flag.Parse()
+
+	_, err := toml.DecodeFile(configPath, &conf)
 	if err != nil {
 		writeToLog(err, true)
 	}
