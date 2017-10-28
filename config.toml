@@ -1,0 +1,39 @@
+logging = true
+
+[server]
+address = ":8000"
+path = "/ctl"
+
+[serial]
+port = "/dev/ttyUSB1"
+baud = 9600
+
+[commands]
+
+    [commands.poweron]
+    command = "POWR1"
+    hasParameter = false
+
+    [commands.poweroff]
+    command = "POWR0"
+    hasParameter = false
+
+    [commands.input]
+    command = "IAVD"
+    hasParameter = true
+
+    [commands.avmode]
+    command = "AVMD"
+    hasParameter = true
+
+    [commands.volume]
+    command = "VOLM"
+    hasParameter = true
+
+    [commands.mute]
+    command = "MUTE1"
+    hasParameter = false
+
+    [commands.unmute]
+    command = "MUTE2"
+    hasParameter = false
