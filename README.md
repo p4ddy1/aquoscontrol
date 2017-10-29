@@ -1,4 +1,4 @@
-#Aquos Control
+# Aquos Control
 
 This is a tool to control a Sharp Aquos TV via the serial port over network. It creates a http server listening for requests containing commands and sends them to the TV. Useful to integrate the device in a home automation system like [Domoticz](http://www.domoticz.com/). For further information on which serial commands to use please take a look at the user manual of your model.
 
