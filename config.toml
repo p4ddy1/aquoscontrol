@@ -1,18 +1,22 @@
-logging = true
+# Logging to console
+logging = false
 
+# Configure the http server
 [server]
 address = ":8000"
 path = "/ctl"
 
+# Configure the serial port
 [serial]
 port = "/dev/ttyUSB1"
 baud = 9600
 
+# Define commands
 [commands]
 
     [commands.poweron]
-    command = "POWR1"
-    hasParameter = false
+    command = "POWR1" # Command sent to the TV
+    hasParameter = false # Wont accept parameter in GET request
 
     [commands.poweroff]
     command = "POWR0"
@@ -20,7 +24,7 @@ baud = 9600
 
     [commands.input]
     command = "IAVD"
-    hasParameter = true
+    hasParameter = true # Parameter value in GET request will be added
 
     [commands.avmode]
     command = "AVMD"
